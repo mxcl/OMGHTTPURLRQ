@@ -94,7 +94,7 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 
     NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
 
-    id boundary1 = @"0xKhTmLbOuNdArY";
+    id boundary1 = [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
     id boundary2 = [NSString stringWithFormat:@"\r\n--%@\r\n", boundary1];
 
     id contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary1];
