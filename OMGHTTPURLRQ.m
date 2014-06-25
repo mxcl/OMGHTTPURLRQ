@@ -125,10 +125,10 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     rq.HTTPMethod = @"POST";
 
     id queryString = NSDictionaryToURLQueryString(parameters);
-    id data = [queryString dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [queryString dataUsingEncoding:NSUTF8StringEncoding];
     [rq addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
     [rq addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [rq addValue:[NSString stringWithFormat:@"%i", (int)[data length]] forHTTPHeaderField:@"Content-Length"];
+    [rq addValue:@(data.length).description forHTTPHeaderField:@"Content-Length"];
     [rq setHTTPBody:data];
 
     return rq;
