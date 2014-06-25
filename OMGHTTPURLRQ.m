@@ -87,35 +87,30 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     return rq;
 }
 
-+ (NSMutableURLRequest *)POST:(NSString *)url :(NSData *)payload filename:(NSString *)name {
++ (NSMutableURLRequest *)POST:(NSString *)url multipartForm:(void(^)(void(^)(NSData *payload, NSString *name, NSString *filename)))addFiles {
+
+    id const boundary = [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
+    id const charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    id const contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary];
+
+    NSMutableData *body = [NSMutableData data];
+    addFiles(^(NSData *payload, NSString *name, NSString *filename) {
+        id ln1 = [NSString stringWithFormat:@"--%@\r\n", boundary];
+        id ln2 = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", name, filename];
+        id ln3 = @"Content-Type: application/octet-stream\r\n\r\n";
+        id ln5 = [NSString stringWithFormat:@"\r\n--%@--\r\n", boundary];
+        [body appendData:[ln1 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[ln2 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[ln3 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:payload];
+        [body appendData:[ln5 dataUsingEncoding:NSUTF8StringEncoding]];
+    });
+
     NSMutableURLRequest *rq = OMGMutableURLRequest();
-    rq.URL = [NSURL URLWithString:url];
-    rq.HTTPMethod = @"POST";
-
-    NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-
-    id boundary1 = [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
-    id boundary2 = [NSString stringWithFormat:@"\r\n--%@\r\n", boundary1];
-
-    id contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary1];
+    [rq setURL:[NSURL URLWithString:url]];
+    [rq setHTTPMethod:@"POST"];
     [rq addValue:contentType forHTTPHeaderField:@"Content-Type"];
-
-    NSMutableData *data = [NSMutableData data];
-    [data appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary1] dataUsingEncoding:NSUTF8StringEncoding]];
-
-    // Sample Key Value for data
-    [data appendData:[@"Content-Disposition: form-data; name=\"Key_Param\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Value_Param" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[boundary2 dataUsingEncoding:NSUTF8StringEncoding]];
-
-    // Sample file to send as data
-    [data appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"file\"\r\n", name] dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:payload];
-    [data appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary1] dataUsingEncoding:NSUTF8StringEncoding]];
-
-    rq.HTTPBody = data;
-
+    [rq setHTTPBody:body];
     return rq;
 }
 

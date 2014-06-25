@@ -6,6 +6,6 @@
 + (NSMutableURLRequest *)GET:(NSString *)url :(NSDictionary *)parameters;
 + (NSMutableURLRequest *)POST:(NSString *)url :(NSDictionary *)parameters;
 + (NSMutableURLRequest *)POST:(NSString *)url JSON:(id)JSONObject;
-+ (NSMutableURLRequest *)POST:(NSString *)url :(NSData *)payload filename:(NSString *)name;
++ (NSMutableURLRequest *)POST:(NSString *)url multipartForm:(void(^)(void(^addFile)(NSData *payload, NSString *name, NSString *filename)))body;
 
 @end
