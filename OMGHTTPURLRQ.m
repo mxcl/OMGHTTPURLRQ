@@ -80,7 +80,8 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 
 + (NSMutableURLRequest *)GET:(NSString *)url :(NSDictionary *)params {
     id queryString = NSDictionaryToURLQueryString(params);
-    id combine = [NSString stringWithFormat:@"%@?%@", url, queryString];
+    id combine = url;
+	if (queryString) combine = [combine stringByAppendingFormat:@"?%@",queryString];
     NSMutableURLRequest *rq = OMGMutableURLRequest();
     rq.HTTPMethod = @"GET";
     rq.URL = [NSURL URLWithString:combine];
