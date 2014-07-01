@@ -133,7 +133,7 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     NSMutableURLRequest *rq = OMGMutableURLRequest();
     rq.URL = [NSURL URLWithString:url];
     rq.HTTPMethod = @"POST";
-    rq.HTTPBody = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    rq.HTTPBody = [NSJSONSerialization dataWithJSONObject:params options:(NSJSONWritingOptions)0 error:nil];
     [rq setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [rq setValue:@"json" forHTTPHeaderField:@"Data-Type"];
     return rq;
