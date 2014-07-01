@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name = "OMGHTTPURLRQ"
-  s.version = "1.1.1"
+  s.version = "1.1.2"
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
   s.license = 'MIT'
-  s.summary = 'Doing the bits of NSURLRequest that Apple doesn’t.'
+  s.summary = 'Vital extensions to NSURLRequest that Apple left out for some reason.'
 
   s.social_media_url = 'https://twitter.com/mxcl'
   s.authors  = { 'Max Howell' => 'mxcl@me.com' }
