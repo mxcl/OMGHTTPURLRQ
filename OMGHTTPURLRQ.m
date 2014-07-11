@@ -115,19 +115,23 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     return rq;
 }
 
-+ (NSMutableURLRequest *)POST:(NSString *)url :(NSDictionary *)parameters {
++ (NSMutableURLRequest*)requestWithUrl:(NSString *) url method:(NSString *)method params:(NSDictionary*)parameters {
     NSMutableURLRequest *rq = OMGMutableURLRequest();
     rq.URL = [NSURL URLWithString:url];
-    rq.HTTPMethod = @"POST";
-
+    rq.HTTPMethod = method;
+    
     id queryString = NSDictionaryToURLQueryString(parameters);
     NSData *data = [queryString dataUsingEncoding:NSUTF8StringEncoding];
     [rq addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
     [rq addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [rq addValue:@(data.length).description forHTTPHeaderField:@"Content-Length"];
     [rq setHTTPBody:data];
-
+    
     return rq;
+}
+
++ (NSMutableURLRequest *)POST:(NSString *)url :(NSDictionary *)parameters {
+    return [self requestWithUrl:url method:@"POST" params:parameters];
 }
 
 + (NSMutableURLRequest *)POST:(NSString *)url JSON:(id)params {
@@ -138,6 +142,10 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     [rq setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [rq setValue:@"json" forHTTPHeaderField:@"Data-Type"];
     return rq;
+}
+
++ (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters {
+    return [self requestWithUrl:url method:@"DELETE" params:parameters];
 }
 
 @end
