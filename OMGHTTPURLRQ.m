@@ -144,6 +144,10 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     return rq;
 }
 
++ (NSMutableURLRequest *)PUT:(NSString *)url :(NSDictionary *)parameters {
+    return [self requestWithUrl:url method:@"PUT" params:parameters];
+}
+
 + (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters {
     return [self requestWithUrl:url method:@"DELETE" params:parameters];
 }
