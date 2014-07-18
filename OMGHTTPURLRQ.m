@@ -1,4 +1,5 @@
 #import "OMGHTTPURLRQ.h"
+#import "OMGUserAgent.h"
 #import "Chuzzle.h"
 
 static inline NSString *enc(NSString *in) {
@@ -8,23 +9,6 @@ static inline NSString *enc(NSString *in) {
             CFSTR("[]."),
             CFSTR(":/?&=;+!@#$()',*"),
             kCFStringEncodingUTF8);
-}
-
-static NSString *OMGUserAgent() {
-    static NSString *ua;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        id info = [NSBundle mainBundle].infoDictionary;
-        id name = info[@"CFBundleDisplayName"] ?: info[(__bridge NSString *)kCFBundleIdentifierKey];
-        id vers = (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ?: info[(__bridge NSString *)kCFBundleVersionKey];
-      #ifdef UIKIT_EXTERN
-        float scale = ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [UIScreen mainScreen].scale : 1.0f);
-        ua = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", name, vers, [UIDevice currentDevice].model, [UIDevice currentDevice].systemVersion, scale];
-      #else
-        ua = [NSString stringWithFormat:@"%@/%@", name, vers];
-      #endif
-    });
-    return ua;
 }
 
 static inline NSMutableURLRequest *OMGMutableURLRequest() {

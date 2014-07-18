@@ -14,8 +14,14 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
-  
-  s.dependency "ChuzzleKit"
-  
-  s.source_files = '*.{h,m}'
+
+  s.subspec 'RQ' do |ss|
+    s.source_files = 'OMGHTTPURLRQ.{h,m}'
+    s.dependency 'ChuzzleKit'
+    s.dependency 'OMGHTTPURLRQ/UserAgent'
+  end
+
+  s.subspec 'UserAgent' do |ss|
+    ss.source_files = 'OMGUserAgent.{h,m}'
+  end
 end
