@@ -1,6 +1,6 @@
 #import "OMGHTTPURLRQ.h"
 #import "OMGUserAgent.h"
-#import "Chuzzle.h"
+#import <Chuzzle.h>
 
 static inline NSString *enc(NSString *in) {
 	return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(
@@ -99,7 +99,7 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     return rq;
 }
 
-+ (NSMutableURLRequest*)requestWithUrl:(NSString *) url method:(NSString *)method params:(NSDictionary*)parameters {
+static NSMutableURLRequest *OMGFormURLEncodedRequest(NSString *url, NSString *method, NSDictionary *parameters) {
     NSMutableURLRequest *rq = OMGMutableURLRequest();
     rq.URL = [NSURL URLWithString:url];
     rq.HTTPMethod = method;
@@ -115,7 +115,7 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 }
 
 + (NSMutableURLRequest *)POST:(NSString *)url :(NSDictionary *)parameters {
-    return [self requestWithUrl:url method:@"POST" params:parameters];
+    return OMGFormURLEncodedRequest(url, @"POST", parameters);
 }
 
 + (NSMutableURLRequest *)POST:(NSString *)url JSON:(id)params {
@@ -129,13 +129,11 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 }
 
 + (NSMutableURLRequest *)PUT:(NSString *)url :(NSDictionary *)parameters {
-    return [self requestWithUrl:url method:@"PUT" params:parameters];
+    return OMGFormURLEncodedRequest(url, @"PUT", parameters);
 }
 
 + (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters {
-    return [self requestWithUrl:url method:@"DELETE" params:parameters];
+    return OMGFormURLEncodedRequest(url, @"DELETE", parameters);
 }
 
 @end
-
-
