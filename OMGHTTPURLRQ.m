@@ -1,6 +1,5 @@
 #import "OMGHTTPURLRQ.h"
 #import "OMGUserAgent.h"
-#import <Chuzzle.h>
 
 static inline NSString *enc(NSString *in) {
 	return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(
@@ -47,7 +46,7 @@ static NSArray *DoQueryMagic(NSString *key, id value) {
 }
 
 NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
-    if (!params.chuzzle)
+    if (params.count == 0)
         return nil;
     NSMutableString *s = [NSMutableString new];
     NSEnumerator *e = DoQueryMagic(nil, params).objectEnumerator;
