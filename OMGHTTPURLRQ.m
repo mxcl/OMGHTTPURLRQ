@@ -1,5 +1,10 @@
+#import <CoreFoundation/CFURL.h>
+#import <Foundation/NSSortDescriptor.h>
+#import <Foundation/NSJSONSerialization.h>
+#import <Foundation/NSURL.h>
 #import "OMGHTTPURLRQ.h"
 #import "OMGUserAgent.h"
+#include <stdlib.h>
 
 static inline NSString *enc(NSString *in) {
 	return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(

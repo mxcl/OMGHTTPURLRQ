@@ -1,4 +1,7 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/NSData.h>
+#import <Foundation/NSDictionary.h>
+#import <Foundation/NSURLRequest.h>
+#import <Foundation/NSString.h>
 
 
 @interface OMGHTTPURLRQ : NSObject
