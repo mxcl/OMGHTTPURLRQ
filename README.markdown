@@ -24,6 +24,8 @@ NSMutableURLRequest *rq = [OMGHTTPURLRQ PUT:@"http://api.com":@{@"key": @"value"
 NSMutableURLRequest *rq = [OMGHTTPURLRQ DELETE:@"http://api.com":@{@"key": @"value"}];
 ```
 
+You can then pass these to an `NSURLConnection` or `NSURLSession`.
+
 
 ## OMGUserAgent
 
@@ -33,4 +35,25 @@ If you just need a sensible UserAgent string for your application you can `pod O
 #import <OMGHTTPURLRQ/OMGUserAgent.h>
 
 NSString *userAgent = OMGUserAgent();
+```
+
+OMGHTTPURLRQ adds this User-Agent to all requests it generates automatically.
+
+
+## Configuring an `NSURLSessionUploadTask`
+
+If you need to use `NSURLSession`’s `uploadTask:` but it won’t work because your endpoint expects a multiform request, use this:
+
+```objc
+id config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:someID];
+id session = [NSURLSession sessionWithConfiguration:config delegate:someObject delegateQueue:[NSOperationQueue new]];
+
+NSURLRequest *rq = [OMGHTTPURLRQ POST:urlString multipartForm:^(void(^addFile)(NSData *payload, NSString *name, NSString *filename)){
+    addFile(data, @"file", @"file.png");
+}];
+
+id path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"upload.NSData"];
+[rq.HTTPBody writeToFile:path atomically:YES];
+
+[[session uploadTaskWithRequest:rq fromFile:[NSURL fileURLWithPath:path]] resume];
 ```
