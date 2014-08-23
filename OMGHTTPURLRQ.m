@@ -136,6 +136,12 @@ static NSMutableURLRequest *OMGFormURLEncodedRequest(NSString *url, NSString *me
     return OMGFormURLEncodedRequest(url, @"PUT", parameters);
 }
 
++ (NSMutableURLRequest *)PUT:(NSString *)url JSON:(id)params {
+    NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:url JSON:params];
+    rq.HTTPMethod = @"PUT";
+    return rq;
+}
+
 + (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters {
     return OMGFormURLEncodedRequest(url, @"DELETE", parameters);
 }
