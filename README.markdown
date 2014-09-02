@@ -42,7 +42,7 @@ OMGHTTPURLRQ adds this User-Agent to all requests it generates automatically.
 
 ## Configuring an `NSURLSessionUploadTask`
 
-If you need to use `NSURLSession`’s `uploadTask:` but it won’t work because your endpoint expects a multiform request, use this:
+If you need to use `NSURLSession`’s `uploadTask:` but it won’t work because your endpoint expects a multipart-form request, use this:
 
 ```objc
 id config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:someID];
