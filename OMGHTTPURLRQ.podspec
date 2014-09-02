@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version = "1.1.6"
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
-  s.license = { :type => 'No License', :text => 'This text or CocoaPods throws a fit' }
+  s.license = { :type => 'MIT', :text => 'See README.markdown for full license text.' }
   s.summary = 'Vital extensions to NSURLRequest that Apple left out for some reason.'
 
   s.social_media_url = 'https://twitter.com/mxcl'
