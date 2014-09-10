@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "OMGHTTPURLRQ"
-  s.version = "1.1.6"
+  s.version = "2.0"
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
   s.license = { :type => 'MIT', :text => 'See README.markdown for full license text.' }

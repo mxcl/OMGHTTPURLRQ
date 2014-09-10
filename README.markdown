@@ -8,12 +8,6 @@ NSMutableURLRequest *rq = [OMGHTTPURLRQ GET:@"http://api.com":@{@"key": @"value"
 // application/x-www-form-urlencoded
 NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:@"http://api.com":@{@"key": @"value"}];
 
-// multipart/form-data
-NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:url multipartForm:^(void(^addFile)(NSData *payload, id name, id filename)) {
-    addFile(data1, @"file1", @"file1.png");
-    addFile(data2, @"file2", @"file2.png");
-}];
-
 // application/json
 NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:@"http://api.com" JSON:@{@"key": @"value"}];
 
@@ -25,6 +19,52 @@ NSMutableURLRequest *rq = [OMGHTTPURLRQ DELETE:@"http://api.com":@{@"key": @"val
 ```
 
 You can then pass these to an `NSURLConnection` or `NSURLSession`.
+
+
+## `multipart/form-data`
+
+```objc
+
+OMGMultipartFormData *multipartFormData = [OMGMultipartFormData new];
+
+NSData *data1 = [NSData dataWithContentsOfFile:@"myimage1.png"];
+[multipartFormData addFile:data1 parameterName:@"file1" filename:@"myimage1.png" contentType:@"image/png"];
+
+// Ideally you would not want to re-encode the PNG, but often it is
+// tricky to avoid it.
+UIImage *image2 = [UIImage imageNamed:@"image2"];
+NSData *data2 = UIImagePNGRepresentation(image2);
+[multipartFormData addFile:data2 parameterName:@"file2" filename:@"myimage2.png" contentType:@"image/png"];
+
+// SUPER Ideally you would not want to re-encode the JPEG as the process
+// is lossy. If you image comes from the AssetLibrary you *CAN* get the
+// original `NSData`. See stackoverflow.com.
+UIImage *image3 = [UIImage imageNamed:@"image3"];
+NSData *data3 = UIImageJPEGRepresentation(image3);
+[multipartFormData addFile:data3 parameterName:@"file2" filename:@"myimage3.jpeg" contentType:@"image/jpeg"];
+
+NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:url:builder];
+```
+
+
+## Configuring an `NSURLSessionUploadTask`
+
+If you need to use `NSURLSession`’s `uploadTask:` but it won’t work because your endpoint expects a multipart-form request, use this:
+
+```objc
+id config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:someID];
+id session = [NSURLSession sessionWithConfiguration:config delegate:someObject delegateQueue:[NSOperationQueue new]];
+
+OMGMultipartFormData *multipartFormData = [OMGMultipartFormData new];
+[multipartFormDatabuilder addFile:data parameterName:@"file" filename:nil contentType:nil];
+
+NSURLRequest *rq = [OMGHTTPURLRQ POST:urlString:multipartFormData];
+
+id path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"upload.NSData"];
+[rq.HTTPBody writeToFile:path atomically:YES];
+
+[[session uploadTaskWithRequest:rq fromFile:[NSURL fileURLWithPath:path]] resume];
+```
 
 
 ## OMGUserAgent
@@ -39,24 +79,6 @@ NSString *userAgent = OMGUserAgent();
 
 OMGHTTPURLRQ adds this User-Agent to all requests it generates automatically.
 
-
-## Configuring an `NSURLSessionUploadTask`
-
-If you need to use `NSURLSession`’s `uploadTask:` but it won’t work because your endpoint expects a multipart-form request, use this:
-
-```objc
-id config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:someID];
-id session = [NSURLSession sessionWithConfiguration:config delegate:someObject delegateQueue:[NSOperationQueue new]];
-
-NSURLRequest *rq = [OMGHTTPURLRQ POST:urlString multipartForm:^(void(^addFile)(NSData *payload, NSString *name, NSString *filename)){
-    addFile(data, @"file", @"file.png");
-}];
-
-id path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"upload.NSData"];
-[rq.HTTPBody writeToFile:path atomically:YES];
-
-[[session uploadTaskWithRequest:rq fromFile:[NSURL fileURLWithPath:path]] resume];
-```
 
 # License
 

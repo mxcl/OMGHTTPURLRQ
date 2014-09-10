@@ -65,6 +65,57 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 }
 
 
+
+@implementation OMGMultipartFormData {
+@public
+    NSString *boundary;
+    NSMutableData *body;
+}
+
+- (instancetype)init {
+    body = [NSMutableData data];
+    boundary = [NSString stringWithFormat:@"------------------------%08X%08X", arc4random(), arc4random()];
+    return self;
+}
+
+- (void)add:(NSData *)payload :(NSString *)name :(NSString *)filename :(NSString *)contentType {
+    id ln1 = [NSString stringWithFormat:@"--%@\r\n", boundary];
+    id ln2 = ({
+        id s = [NSMutableString stringWithString:@"Content-Disposition: form-data; "];
+        [s appendFormat:@"name=\"%@\"", name];
+        if (filename.length)
+            [s appendFormat:@"; filename=\"%@\"", filename];
+        [s appendString:@"\r\n"];
+        if (contentType.length)
+            [s appendFormat:@"Content-Type: %@\r\n", contentType];
+        [s appendString:@"\r\n"];
+        s;
+    });
+
+    [body appendData:[ln1 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[ln2 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:payload];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (void)addFile:(NSData *)payload parameterName:(NSString *)name filename:(NSString *)filename contentType:(NSString *)contentType
+{
+    [self add:payload:name:filename:(contentType ?: @"application/octet-stream")];
+}
+
+- (void)addText:(NSString *)text parameterName:(NSString *)parameterName {
+    [self add:[text dataUsingEncoding:NSUTF8StringEncoding]:parameterName:nil:nil];
+}
+
+- (void)addParameters:(NSDictionary *)parameters {
+    for (id key in parameters)
+        [self addText:[key description] parameterName:key];
+}
+
+@end
+
+
+
 @implementation OMGHTTPURLRQ
 
 + (NSMutableURLRequest *)GET:(NSString *)url :(NSDictionary *)params {
@@ -73,33 +124,6 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
     NSMutableURLRequest *rq = OMGMutableURLRequest();
     rq.HTTPMethod = @"GET";
     rq.URL = [NSURL URLWithString:url];
-    return rq;
-}
-
-+ (NSMutableURLRequest *)POST:(NSString *)url multipartForm:(void(^)(void(^)(NSData *payload, NSString *name, NSString *filename)))addFiles {
-
-    id const boundary = [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
-    id const charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
-    id const contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary];
-
-    NSMutableData *body = [NSMutableData data];
-    addFiles(^(NSData *payload, NSString *name, NSString *filename) {
-        id ln1 = [NSString stringWithFormat:@"--%@\r\n", boundary];
-        id ln2 = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", name, filename];
-        id ln3 = @"Content-Type: application/octet-stream\r\n\r\n";
-        id ln5 = [NSString stringWithFormat:@"\r\n--%@--\r\n", boundary];
-        [body appendData:[ln1 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[ln2 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[ln3 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:payload];
-        [body appendData:[ln5 dataUsingEncoding:NSUTF8StringEncoding]];
-    });
-
-    NSMutableURLRequest *rq = OMGMutableURLRequest();
-    [rq setURL:[NSURL URLWithString:url]];
-    [rq setHTTPMethod:@"POST"];
-    [rq addValue:contentType forHTTPHeaderField:@"Content-Type"];
-    [rq setHTTPBody:body];
     return rq;
 }
 
@@ -118,8 +142,25 @@ static NSMutableURLRequest *OMGFormURLEncodedRequest(NSString *url, NSString *me
     return rq;
 }
 
-+ (NSMutableURLRequest *)POST:(NSString *)url :(NSDictionary *)parameters {
-    return OMGFormURLEncodedRequest(url, @"POST", parameters);
++ (NSMutableURLRequest *)POST:(NSString *)url :(id)body {
+    if (![body isKindOfClass:[OMGMultipartFormData class]]) {
+        return OMGFormURLEncodedRequest(url, @"POST", body);
+    } else {
+        OMGMultipartFormData *multipartFormData = (id)body;
+        id const charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+        id const contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, multipartFormData->boundary];
+
+        NSMutableData *data = [multipartFormData->body mutableCopy];
+        id lastLine = [NSString stringWithFormat:@"\r\n--%@--\r\n", multipartFormData->boundary];
+        [data appendData:[lastLine dataUsingEncoding:NSUTF8StringEncoding]];
+
+        NSMutableURLRequest *rq = OMGMutableURLRequest();
+        [rq setURL:[NSURL URLWithString:url]];
+        [rq setHTTPMethod:@"POST"];
+        [rq addValue:contentType forHTTPHeaderField:@"Content-Type"];
+        [rq setHTTPBody:data];
+        return rq;
+    }
 }
 
 + (NSMutableURLRequest *)POST:(NSString *)url JSON:(id)params {
