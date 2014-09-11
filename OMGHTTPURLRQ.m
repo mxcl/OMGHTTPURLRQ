@@ -109,7 +109,7 @@ NSString *NSDictionaryToURLQueryString(NSDictionary *params) {
 
 - (void)addParameters:(NSDictionary *)parameters {
     for (id key in parameters)
-        [self addText:[key description] parameterName:key];
+        [self addText:[parameters[key] description] parameterName:key];
 }
 
 @end
