@@ -79,6 +79,42 @@ NSString *userAgent = OMGUserAgent();
 
 OMGHTTPURLRQ adds this User-Agent to all requests it generates automatically.
 
+So for URLRequests generated **other** than by OMGHTTPURLRQ you would do:
+
+```objc
+[someURLRequest addValue:OMGUserAgent() forHTTPHeaderField:@"User-Agent"];
+```
+
+
+# Twitter Reverse Auth
+
+You need an OAuth library, here we use the `TDOAuth` pod. You also need
+your API keys that registering at https://dev.twitter.com will provide
+you.
+
+```objc
+NSMutableURLRequest *rq = [TDOAuth URLRequestForPath:@"/oauth/request_token" GETParameters:@{@"x_auth_mode" : @"reverse_auth"} scheme:@"https" host:@"api.twitter.com"consumerKey:APIKey consumerSecret:APISecret accessToken:nil tokenSecret:nil];
+[rq addValue:OMGUserAgent() forHTTPHeaderField:@"User-Agent"];
+
+[NSURLConnection sendAsynchronousRequest:rq queue:nil completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    id oauth = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    SLRequest *reverseAuth = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/oauth/access_token"] parameters:@{
+        @"x_reverse_auth_target": APIKey,
+        @"x_reverse_auth_parameters": oauth
+    }];
+    reverseAuth.account = account;
+    [reverseAuth performRequestWithHandler:^(NSData *data, NSHTTPURLResponse *urlResponse, NSError *error) {
+        id creds = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        id credsDict = [NSMutableDictionary new];
+        for (__strong id pair in [creds componentsSeparatedByString:@"&"]) {
+            pair = [pair componentsSeparatedByString:@"="];
+            credsDict[pair[0]] = pair[1];
+        }
+        NSLog(@"%@", credsDict);
+    }];
+}];
+```
+
 
 # License
 
