@@ -31,7 +31,6 @@
 - (void)addText:(NSString *)text parameterName:(NSString *)parameterName;
 
 /**
- 0.2.4.6.8.0.2.4.6.8.0.2.4.6.8.0.2.4.6.8.0.2.4.6.8.0.2.4.6.8.0.2.4.6.8.0.2
  Technically adding parameters to a multipart/form-data request is abusing
  the specification. What we do is add each parameter as a text-item. Any
  API that expects parameters in a multipart/form-data request will expect
