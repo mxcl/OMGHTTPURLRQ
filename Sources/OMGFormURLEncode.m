@@ -1,14 +1,17 @@
 #import <Foundation/Foundation.h>
 #import "OMGFormURLEncode.h"
 
-static inline NSString *enc(NSString *in) {
-	return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(
-            kCFAllocatorDefault,
-            (__bridge CFStringRef)in.description,
-            CFSTR("[]."),
-            CFSTR(":/?&=;+!@#$()',*"),
-            kCFStringEncodingUTF8);
+static inline NSString *enc(id in, CFStringRef ignore) {
+    return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(
+        kCFAllocatorDefault,
+        (__bridge CFStringRef)[in description],
+        ignore,
+        CFSTR(":/?&=;+!@#$()',*"),
+        kCFStringEncodingUTF8);
 }
+
+#define enckey(in) enc(in, CFSTR("[]."))
+#define encval(in) enc(in, NULL)
 
 static NSArray *DoQueryMagic(NSString *key, id value) {
     NSMutableArray *parts = [NSMutableArray new];
@@ -39,17 +42,15 @@ static NSArray *DoQueryMagic(NSString *key, id value) {
     #undef sortDescriptor
 }
 
-
-
 NSString *OMGFormURLEncode(NSDictionary *parameters) {
     if (parameters.count == 0)
         return nil;
     NSMutableString *queryString = [NSMutableString new];
     NSEnumerator *e = DoQueryMagic(nil, parameters).objectEnumerator;
     for (;;) {
-        id obj = e.nextObject;
+        id const obj = e.nextObject;
         if (!obj) break;
-        [queryString appendFormat:@"%@=%@&", enc(obj), enc(e.nextObject)];
+        [queryString appendFormat:@"%@=%@&", enckey(obj), encval(e.nextObject)];
     }
     [queryString deleteCharactersInRange:NSMakeRange(queryString.length - 1, 1)];
     return queryString;

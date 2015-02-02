@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "OMGHTTPURLRQ"
-  s.version = "2.1"
+  s.version = "2.1.1"
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
   s.license = { :type => 'MIT', :text => 'See README.markdown for full license text.' }
@@ -17,17 +17,17 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'RQ'
 
   s.subspec 'RQ' do |ss|
-    ss.source_files = 'OMGHTTPURLRQ.{h,m}'
+    ss.source_files = 'Sources/OMGHTTPURLRQ.{h,m}'
     ss.dependency 'OMGHTTPURLRQ/UserAgent'
     ss.dependency 'OMGHTTPURLRQ/FormURLEncode'
   end
 
   s.subspec 'UserAgent' do |ss|
-    ss.source_files = 'OMGUserAgent.{h,m}'
+    ss.source_files = 'Sources/OMGUserAgent.{h,m}'
   end
 
   s.subspec 'FormURLEncode' do |ss|
-    ss.source_files = 'OMGFormURLEncode.{h,m}'
+    ss.source_files = 'Sources/OMGFormURLEncode.{h,m}'
   end
 
 end

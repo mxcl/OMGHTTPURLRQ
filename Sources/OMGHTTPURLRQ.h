@@ -2,6 +2,8 @@
 #import <Foundation/NSDictionary.h>
 #import <Foundation/NSURLRequest.h>
 #import <Foundation/NSString.h>
+#import "OMGFormURLEncode.h"
+#import "OMGUserAgent.h"
 
 
 @interface OMGHTTPURLRQ : NSObject
