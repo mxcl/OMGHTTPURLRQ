@@ -1,3 +1,8 @@
+#import <Foundation/NSObjCRuntime.h>
+
+FOUNDATION_EXPORT double OMGHTTPURLRQVersionNumber;
+FOUNDATION_EXPORT const unsigned char OMGHTTPURLRQVersionString[];
+
 #import <Foundation/NSData.h>
 #import <Foundation/NSDictionary.h>
 #import <Foundation/NSURLRequest.h>
@@ -16,7 +21,6 @@
 + (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters;
 
 @end
-
 
 
 /**
