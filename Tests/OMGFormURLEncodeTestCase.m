@@ -1,4 +1,4 @@
-#import <OMGHTTPURLRQ/OMGFormURLEncode.h>
+#import <OMGHTTPURLRQ/OMGHTTPURLRQ.h>
 @import XCTest;
 
 
@@ -34,6 +34,35 @@
     id output = OMGFormURLEncode(input);
     id expect = @"key[key][%2B]=value%20value&key[key][-]=%3B";
     XCTAssertEqualObjects(output, expect);
+}
+
+- (void)test5 {
+    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":@{@"key":@" !\"#$%&'()*+,/"}];
+    XCTAssertEqualObjects(rq.URL.query, @"key=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2F");
+}
+
+- (void)test6 {
+    id params = @{@"key": @"%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2F"};
+    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":params];
+    XCTAssertEqualObjects(rq.URL.query, @"key=%2520%2521%2522%2523%2524%2525%2526%2527%2528%2529%252A%252B%252C%252F");
+}
+
+- (void)test7 {
+    id params = @{@"key":@"value"};
+    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params];
+
+    NSString *body = [[NSString alloc] initWithData:[rq HTTPBody] encoding:NSUTF8StringEncoding];
+
+    XCTAssertEqualObjects(@"{\"key\":\"value\"}", body, @"Parameters were not encoded correctly");
+}
+
+- (void)test8 {
+    id params = @[@{@"key":@"value"}];
+    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params];
+
+    NSString *body = [[NSString alloc] initWithData:[rq HTTPBody] encoding:NSUTF8StringEncoding];
+
+    XCTAssertEqualObjects(@"[{\"key\":\"value\"}]", body, @"Parameters were not encoded correctly");
 }
 
 @end
