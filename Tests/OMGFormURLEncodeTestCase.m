@@ -1,4 +1,4 @@
-#import <OMGHTTPURLRQ/OMGHTTPURLRQ.h>
+@import OMGHTTPURLRQ;
 @import XCTest;
 
 
