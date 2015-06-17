@@ -44,7 +44,7 @@ static NSArray *DoQueryMagic(NSString *key, id value) {
 
 NSString *OMGFormURLEncode(NSDictionary *parameters) {
     if (parameters.count == 0)
-        return nil;
+        return @"";
     NSMutableString *queryString = [NSMutableString new];
     NSEnumerator *e = DoQueryMagic(nil, parameters).objectEnumerator;
     for (;;) {

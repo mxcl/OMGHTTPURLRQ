@@ -37,19 +37,19 @@
 }
 
 - (void)test5 {
-    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":@{@"key":@" !\"#$%&'()*+,/"}];
+    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":@{@"key":@" !\"#$%&'()*+,/"} error:nil];
     XCTAssertEqualObjects(rq.URL.query, @"key=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2F");
 }
 
 - (void)test6 {
     id params = @{@"key": @"%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2F"};
-    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":params];
+    NSURLRequest *rq = [OMGHTTPURLRQ GET:@"http://example.com":params error:nil];
     XCTAssertEqualObjects(rq.URL.query, @"key=%2520%2521%2522%2523%2524%2525%2526%2527%2528%2529%252A%252B%252C%252F");
 }
 
 - (void)test7 {
     id params = @{@"key":@"value"};
-    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params];
+    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params error:nil];
 
     NSString *body = [[NSString alloc] initWithData:[rq HTTPBody] encoding:NSUTF8StringEncoding];
 
@@ -58,7 +58,7 @@
 
 - (void)test8 {
     id params = @[@{@"key":@"value"}];
-    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params];
+    id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params error:nil];
 
     NSString *body = [[NSString alloc] initWithData:[rq HTTPBody] encoding:NSUTF8StringEncoding];
 
