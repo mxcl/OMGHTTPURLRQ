@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
-  `xcodebuild -project PromiseKit.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
+  s.name = "OMGHTTPURLRQ"
+
+  `xcodebuild -project #{s.name}.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
   abort if $1.nil?
   s.version = $1
   
-  s.name = "OMGHTTPURLRQ"
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
   s.license = { :type => 'MIT', :text => 'See README.markdown for full license text.' }
