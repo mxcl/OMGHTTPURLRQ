@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "51D4A3CA1BAC558E00BC6AE2"
-               BuildableName = "OMGtvOS"
+               BuildableName = "OMGHTTPURLRQ.framework"
                BlueprintName = "OMGtvOS"
                ReferencedContainer = "container:OMGHTTPURLRQ.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51D4A3CA1BAC558E00BC6AE2"
-            BuildableName = "OMGtvOS.framework"
+            BuildableName = "OMGHTTPURLRQ.framework"
             BlueprintName = "OMGtvOS"
             ReferencedContainer = "container:OMGHTTPURLRQ.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51D4A3CA1BAC558E00BC6AE2"
-            BuildableName = "OMGtvOS.framework"
+            BuildableName = "OMGHTTPURLRQ.framework"
             BlueprintName = "OMGtvOS"
             ReferencedContainer = "container:OMGHTTPURLRQ.xcodeproj">
          </BuildableReference>
