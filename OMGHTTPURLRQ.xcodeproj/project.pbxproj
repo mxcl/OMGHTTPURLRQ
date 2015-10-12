@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43EDF3C51BCC3C0900159436 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */; };
+		43EDF3C61BCC3C0900159436 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
+		43EDF3C71BCC3C0900159436 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */; };
+		43EDF3CA1BCC3C0900159436 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EDF3CB1BCC3C0900159436 /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EDF3CC1BCC3C0900159436 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0291A7FFDED00F83CA1 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51D4A3D31BAC55F400BC6AE2 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */; };
 		51D4A3D41BAC55F400BC6AE2 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
 		51D4A3D51BAC55F400BC6AE2 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */; };
@@ -40,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D4A3CB1BAC558E00BC6AE2 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
 		51D4A3D71BAC562700BC6AE2 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGHTTPURLRQ.h; path = Sources/OMGHTTPURLRQ.h; sourceTree = "<group>"; };
@@ -58,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		43EDF3C81BCC3C0900159436 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51D4A3C71BAC558E00BC6AE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +137,7 @@
 				63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */,
 				63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */,
 				51D4A3CB1BAC558E00BC6AE2 /* OMGHTTPURLRQ.framework */,
+				43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +145,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		43EDF3C91BCC3C0900159436 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43EDF3CA1BCC3C0900159436 /* OMGHTTPURLRQ.h in Headers */,
+				43EDF3CB1BCC3C0900159436 /* OMGFormURLEncode.h in Headers */,
+				43EDF3CC1BCC3C0900159436 /* OMGUserAgent.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51D4A3C81BAC558E00BC6AE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,6 +188,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		43EDF3C31BCC3C0900159436 /* OMGwatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43EDF3CE1BCC3C0900159436 /* Build configuration list for PBXNativeTarget "OMGwatchOS" */;
+			buildPhases = (
+				43EDF3C41BCC3C0900159436 /* Sources */,
+				43EDF3C81BCC3C0900159436 /* Frameworks */,
+				43EDF3C91BCC3C0900159436 /* Headers */,
+				43EDF3CD1BCC3C0900159436 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OMGwatchOS;
+			productName = OMGHTTPURLRQ;
+			productReference = 43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		51D4A3CA1BAC558E00BC6AE2 /* OMGtvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51D4A3D21BAC558E00BC6AE2 /* Build configuration list for PBXNativeTarget "OMGtvOS" */;
@@ -270,11 +313,19 @@
 				63F804261AB8AAA300E4DEE1 /* OMGOSX */,
 				63EDFE7C1A7FFD0E0030F974 /* OMGTest */,
 				51D4A3CA1BAC558E00BC6AE2 /* OMGtvOS */,
+				43EDF3C31BCC3C0900159436 /* OMGwatchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		43EDF3CD1BCC3C0900159436 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51D4A3C91BAC558E00BC6AE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +357,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		43EDF3C41BCC3C0900159436 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43EDF3C51BCC3C0900159436 /* OMGHTTPURLRQ.m in Sources */,
+				43EDF3C61BCC3C0900159436 /* OMGFormURLEncode.m in Sources */,
+				43EDF3C71BCC3C0900159436 /* OMGUserAgent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51D4A3C61BAC558E00BC6AE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +416,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		43EDF3CF1BCC3C0900159436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OMGHTTPURLRQ;
+				SDKROOT = watchos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43EDF3D01BCC3C0900159436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = OMGHTTPURLRQ;
+				SDKROOT = watchos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		51D4A3D01BAC558E00BC6AE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,6 +541,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -497,6 +583,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -566,6 +653,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		43EDF3CE1BCC3C0900159436 /* Build configuration list for PBXNativeTarget "OMGwatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43EDF3CF1BCC3C0900159436 /* Debug */,
+				43EDF3D01BCC3C0900159436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51D4A3D21BAC558E00BC6AE2 /* Build configuration list for PBXNativeTarget "OMGtvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -573,6 +669,7 @@
 				51D4A3D11BAC558E00BC6AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63EDFE6A1A7FFCF10030F974 /* Build configuration list for PBXProject "OMGHTTPURLRQ" */ = {
 			isa = XCConfigurationList;
