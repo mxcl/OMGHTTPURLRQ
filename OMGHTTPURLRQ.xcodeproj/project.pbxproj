@@ -13,12 +13,6 @@
 		43EDF3CA1BCC3C0900159436 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43EDF3CB1BCC3C0900159436 /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43EDF3CC1BCC3C0900159436 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0291A7FFDED00F83CA1 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51D4A3D31BAC55F400BC6AE2 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */; };
-		51D4A3D41BAC55F400BC6AE2 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
-		51D4A3D51BAC55F400BC6AE2 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */; };
-		51D4A3D91BAC562700BC6AE2 /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51D4A3DA1BAC562700BC6AE2 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D4A3D71BAC562700BC6AE2 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51D4A3DB1BAC562700BC6AE2 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6364E02C1A7FFDED00F83CA1 /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6364E02D1A7FFDED00F83CA1 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
 		6364E02E1A7FFDED00F83CA1 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51D4A3CB1BAC558E00BC6AE2 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
 		51D4A3D71BAC562700BC6AE2 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGHTTPURLRQ.h; path = Sources/OMGHTTPURLRQ.h; sourceTree = "<group>"; };
 		51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/OMGUserAgent.h; sourceTree = "<group>"; };
@@ -66,13 +59,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		43EDF3C81BCC3C0900159436 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51D4A3C71BAC558E00BC6AE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,7 +122,6 @@
 				63EDFE721A7FFD0E0030F974 /* OMGHTTPURLRQ.framework */,
 				63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */,
 				63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */,
-				51D4A3CB1BAC558E00BC6AE2 /* OMGHTTPURLRQ.framework */,
 				43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */,
 			);
 			name = Products;
@@ -152,16 +137,6 @@
 				43EDF3CA1BCC3C0900159436 /* OMGHTTPURLRQ.h in Headers */,
 				43EDF3CB1BCC3C0900159436 /* OMGFormURLEncode.h in Headers */,
 				43EDF3CC1BCC3C0900159436 /* OMGUserAgent.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51D4A3C81BAC558E00BC6AE2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51D4A3DA1BAC562700BC6AE2 /* OMGHTTPURLRQ.h in Headers */,
-				51D4A3D91BAC562700BC6AE2 /* OMGFormURLEncode.h in Headers */,
-				51D4A3DB1BAC562700BC6AE2 /* OMGUserAgent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,24 +179,6 @@
 			name = OMGwatchOS;
 			productName = OMGHTTPURLRQ;
 			productReference = 43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		51D4A3CA1BAC558E00BC6AE2 /* OMGtvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51D4A3D21BAC558E00BC6AE2 /* Build configuration list for PBXNativeTarget "OMGtvOS" */;
-			buildPhases = (
-				51D4A3C61BAC558E00BC6AE2 /* Sources */,
-				51D4A3C71BAC558E00BC6AE2 /* Frameworks */,
-				51D4A3C81BAC558E00BC6AE2 /* Headers */,
-				51D4A3C91BAC558E00BC6AE2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OMGtvOS;
-			productName = OMGtvOS;
-			productReference = 51D4A3CB1BAC558E00BC6AE2 /* OMGHTTPURLRQ.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		63EDFE711A7FFD0E0030F974 /* OMGiOS */ = {
@@ -286,9 +243,6 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
-					51D4A3CA1BAC558E00BC6AE2 = {
-						CreatedOnToolsVersion = 7.1;
-					};
 					63EDFE711A7FFD0E0030F974 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -312,7 +266,6 @@
 				63EDFE711A7FFD0E0030F974 /* OMGiOS */,
 				63F804261AB8AAA300E4DEE1 /* OMGOSX */,
 				63EDFE7C1A7FFD0E0030F974 /* OMGTest */,
-				51D4A3CA1BAC558E00BC6AE2 /* OMGtvOS */,
 				43EDF3C31BCC3C0900159436 /* OMGwatchOS */,
 			);
 		};
@@ -320,13 +273,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		43EDF3CD1BCC3C0900159436 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51D4A3C91BAC558E00BC6AE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,16 +310,6 @@
 				43EDF3C51BCC3C0900159436 /* OMGHTTPURLRQ.m in Sources */,
 				43EDF3C61BCC3C0900159436 /* OMGFormURLEncode.m in Sources */,
 				43EDF3C71BCC3C0900159436 /* OMGUserAgent.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51D4A3C61BAC558E00BC6AE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51D4A3D31BAC55F400BC6AE2 /* OMGHTTPURLRQ.m in Sources */,
-				51D4A3D41BAC55F400BC6AE2 /* OMGFormURLEncode.m in Sources */,
-				51D4A3D51BAC55F400BC6AE2 /* OMGUserAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,67 +373,6 @@
 				PRODUCT_NAME = OMGHTTPURLRQ;
 				SDKROOT = watchos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		51D4A3D01BAC558E00BC6AE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mxcl.OMGHTTPURLRQ;
-				PRODUCT_NAME = OMGHTTPURLRQ;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		51D4A3D11BAC558E00BC6AE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.mxcl.OMGHTTPURLRQ;
-				PRODUCT_NAME = OMGHTTPURLRQ;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -658,15 +533,6 @@
 			buildConfigurations = (
 				43EDF3CF1BCC3C0900159436 /* Debug */,
 				43EDF3D01BCC3C0900159436 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51D4A3D21BAC558E00BC6AE2 /* Build configuration list for PBXNativeTarget "OMGtvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51D4A3D01BAC558E00BC6AE2 /* Debug */,
-				51D4A3D11BAC558E00BC6AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
