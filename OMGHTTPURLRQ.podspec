@@ -15,24 +15,24 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.ios.deployment_target = '5.0'
-  s.osx.deployment_target = '10.7'
+  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.9'
   s.watchos.deployment_target = '2.0'
 
   s.default_subspecs = 'RQ'
 
   s.subspec 'RQ' do |ss|
-    ss.source_files = 'Sources/OMGHTTPURLRQ.{h,m}'
+    ss.source_files = 'Sources/OMGHTTPURLRQ.swift'
     ss.dependency 'OMGHTTPURLRQ/UserAgent'
     ss.dependency 'OMGHTTPURLRQ/FormURLEncode'
   end
 
   s.subspec 'UserAgent' do |ss|
-    ss.source_files = 'Sources/OMGUserAgent.{h,m}'
+    ss.source_files = 'Sources/OMGUserAgent.swift'
   end
 
   s.subspec 'FormURLEncode' do |ss|
-    ss.source_files = 'Sources/OMGFormURLEncode.{h,m}'
+    ss.source_files = 'Sources/OMGFormURLEncode.swift'
   end
 
 end
