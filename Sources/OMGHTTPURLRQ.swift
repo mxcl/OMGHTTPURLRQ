@@ -44,7 +44,7 @@ public final class OMGMultipartFormData {
      The `filename` parameter is optional. The content-type is optional, and
      if left `nil` will default to *octet-stream*.
     */
-    public func addFile(payload: NSData, parameterName name: String, filename: String?, contentType: String?) {
+    public func addFile(payload: NSData, parameterName name: String, filename: String? = nil, contentType: String? = nil) {
         add(payload, name, filename, contentType ?? "application/octet-stream")
     }
     
