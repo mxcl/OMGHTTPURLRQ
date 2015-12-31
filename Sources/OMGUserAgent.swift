@@ -5,7 +5,7 @@ import UIKit
 
 public let OMGUserAgent: String = {
     let info = NSBundle.mainBundle().infoDictionary
-    let name = info?[kCFBundleIdentifierKey as String] as? String ?? "App"
+    let name = info?["CFBundleDisplayName"] as? String ?? info?[kCFBundleIdentifierKey as String] as? String ?? "App"
     let vers = info?[kCFBundleVersionKey as String] as? String ?? "1.0"
     #if os(iOS)
         let scale = UIScreen.mainScreen().scale
