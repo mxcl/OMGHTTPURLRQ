@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.version = $1
   
   s.homepage = "https://github.com/mxcl/#{s.name}"
-  s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
+  s.source = { :git => "https://github.com/supersabbath/OMGHTTPURLRQ.git", :tag => s.version }
   s.license = { :type => 'MIT', :text => 'See README.markdown for full license text.' }
   s.summary = 'Vital extensions to NSURLRequest that Apple left out for some reason (including creating multipart/form-data POSTs)'
 
