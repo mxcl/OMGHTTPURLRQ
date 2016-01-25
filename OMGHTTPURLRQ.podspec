@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   `xcodebuild -project #{s.name}.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
   abort if $1.nil?
-  s.version = $1
+  s.version = '3.0.0'
   
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/supersabbath/OMGHTTPURLRQ.git", :tag => s.version }
