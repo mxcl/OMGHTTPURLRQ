@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43CB00D41C592CD90059D132 /* OMGHTTPURLRQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43CB00D51C592CE00059D132 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */; };
+		43CB00D61C592CE60059D132 /* OMGFormURLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43CB00D71C592CEA0059D132 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
+		43CB00D81C592CED0059D132 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6364E0291A7FFDED00F83CA1 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43CB00D91C592CF10059D132 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */; };
 		43EDF3C51BCC3C0900159436 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */; };
 		43EDF3C61BCC3C0900159436 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */; };
 		43EDF3C71BCC3C0900159436 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */; };
@@ -42,7 +48,6 @@
 /* Begin PBXFileReference section */
 		43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
-		51D4A3D71BAC562700BC6AE2 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGHTTPURLRQ.h; path = Sources/OMGHTTPURLRQ.h; sourceTree = "<group>"; };
 		51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/OMGUserAgent.h; sourceTree = "<group>"; };
 		635FC0261AB8AE4600E3CFFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		63EDFE721A7FFD0E0030F974 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMGTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18CAC721C56CABC0043C367 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E18CAC6E1C56CABC0043C367 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -102,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */,
-				51D4A3D71BAC562700BC6AE2 /* OMGHTTPURLRQ.h */,
 				51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */,
 				6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */,
 				6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */,
@@ -123,6 +135,7 @@
 				63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */,
 				63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */,
 				43EDF3D11BCC3C0900159436 /* OMGHTTPURLRQ.framework */,
+				E18CAC721C56CABC0043C367 /* OMGHTTPURLRQ.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +170,16 @@
 				63F8042D1AB8AAA300E4DEE1 /* OMGHTTPURLRQ.h in Headers */,
 				63F8042E1AB8AAA300E4DEE1 /* OMGFormURLEncode.h in Headers */,
 				63F8042F1AB8AAA300E4DEE1 /* OMGUserAgent.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18CAC6F1C56CABC0043C367 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CB00D41C592CD90059D132 /* OMGHTTPURLRQ.h in Headers */,
+				43CB00D61C592CE60059D132 /* OMGFormURLEncode.h in Headers */,
+				43CB00D81C592CED0059D132 /* OMGUserAgent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +258,24 @@
 			productReference = 63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E18CAC711C56CABC0043C367 /* OMGtvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18CAC791C56CABC0043C367 /* Build configuration list for PBXNativeTarget "OMGtvOS" */;
+			buildPhases = (
+				E18CAC6D1C56CABC0043C367 /* Sources */,
+				E18CAC6E1C56CABC0043C367 /* Frameworks */,
+				E18CAC6F1C56CABC0043C367 /* Headers */,
+				E18CAC701C56CABC0043C367 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OMGtvOS;
+			productName = OMGHTTPURLRQ;
+			productReference = E18CAC721C56CABC0043C367 /* OMGHTTPURLRQ.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,6 +289,9 @@
 					};
 					63EDFE7C1A7FFD0E0030F974 = {
 						CreatedOnToolsVersion = 6.1.1;
+					};
+					E18CAC711C56CABC0043C367 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -267,6 +311,7 @@
 				63F804261AB8AAA300E4DEE1 /* OMGOSX */,
 				63EDFE7C1A7FFD0E0030F974 /* OMGTest */,
 				43EDF3C31BCC3C0900159436 /* OMGwatchOS */,
+				E18CAC711C56CABC0043C367 /* OMGtvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +339,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		63F804301AB8AAA300E4DEE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18CAC701C56CABC0043C367 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -341,6 +393,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E18CAC6D1C56CABC0043C367 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CB00D51C592CE00059D132 /* OMGHTTPURLRQ.m in Sources */,
+				43CB00D71C592CEA0059D132 /* OMGFormURLEncode.m in Sources */,
+				43CB00D91C592CF10059D132 /* OMGUserAgent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -355,10 +417,7 @@
 		43EDF3CF1BCC3C0900159436 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = OMGHTTPURLRQ;
 				SDKROOT = watchos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,10 +426,7 @@
 		43EDF3D01BCC3C0900159436 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = OMGHTTPURLRQ;
 				SDKROOT = watchos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,10 +450,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.0.2;
+				CURRENT_PROJECT_VERSION = 3.1.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 3.0.2;
+				DYLIB_CURRENT_VERSION = 3.1.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -439,10 +495,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3.0.2;
+				CURRENT_PROJECT_VERSION = 3.1.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 3.0.2;
+				DYLIB_CURRENT_VERSION = 3.1.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -525,6 +581,26 @@
 			};
 			name = Release;
 		};
+		E18CAC771C56CABC0043C367 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		E18CAC781C56CABC0043C367 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,6 +645,15 @@
 			buildConfigurations = (
 				63F804321AB8AAA300E4DEE1 /* Debug */,
 				63F804331AB8AAA300E4DEE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E18CAC791C56CABC0043C367 /* Build configuration list for PBXNativeTarget "OMGtvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18CAC771C56CABC0043C367 /* Debug */,
+				E18CAC781C56CABC0043C367 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
