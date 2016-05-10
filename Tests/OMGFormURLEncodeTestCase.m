@@ -48,6 +48,13 @@
 }
 
 - (void)test7 {
+    id urlString = @"http://example.com";
+    NSURLRequest *rq = [OMGHTTPURLRQ GET:urlString:nil error:nil];
+    XCTAssertNil(rq.URL.query);
+    XCTAssertEqualObjects(rq.URL.absoluteString, urlString);
+}
+
+- (void)test8 {
     id params = @{@"key":@"value"};
     id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params error:nil];
 
@@ -56,7 +63,7 @@
     XCTAssertEqualObjects(@"{\"key\":\"value\"}", body, @"Parameters were not encoded correctly");
 }
 
-- (void)test8 {
+- (void)test9 {
     id params = @[@{@"key":@"value"}];
     id rq = [OMGHTTPURLRQ POST:@"http://example.com" JSON:params error:nil];
 
