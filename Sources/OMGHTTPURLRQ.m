@@ -47,7 +47,6 @@ static inline NSMutableURLRequest *OMGMutableURLRequest() {
     [body appendData:[ln1 dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[ln2 dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:payload];
-    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 - (void)addFile:(NSData *)payload parameterName:(NSString *)name filename:(NSString *)filename contentType:(NSString *)contentType
