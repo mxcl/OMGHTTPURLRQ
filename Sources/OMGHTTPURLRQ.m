@@ -164,6 +164,12 @@ static NSMutableURLRequest *OMGFormURLEncodedRequest(NSString *urlString, NSStri
     return rq;
 }
 
++ (NSMutableURLRequest *)PATCH:(NSString *)url JSON:(id)params error:(NSError **)error {
+    NSMutableURLRequest *rq = [OMGHTTPURLRQ POST:url JSON:params error:error];
+    rq.HTTPMethod = @"PATCH";
+    return rq;
+}
+
 + (NSMutableURLRequest *)DELETE:(NSString *)url :(NSDictionary *)parameters error:(NSError **)error {
     return OMGFormURLEncodedRequest(url, @"DELETE", parameters, error);
 }
