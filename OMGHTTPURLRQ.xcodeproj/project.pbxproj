@@ -240,9 +240,9 @@
 			productReference = 63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63F804261AB8AAA300E4DEE1 /* OMGOSX */ = {
+		63F804261AB8AAA300E4DEE1 /* OMGmacOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63F804311AB8AAA300E4DEE1 /* Build configuration list for PBXNativeTarget "OMGOSX" */;
+			buildConfigurationList = 63F804311AB8AAA300E4DEE1 /* Build configuration list for PBXNativeTarget "OMGmacOS" */;
 			buildPhases = (
 				63F804271AB8AAA300E4DEE1 /* Sources */,
 				63F8042B1AB8AAA300E4DEE1 /* Frameworks */,
@@ -253,7 +253,7 @@
 			);
 			dependencies = (
 			);
-			name = OMGOSX;
+			name = OMGmacOS;
 			productName = OMGHTTPURLRQ;
 			productReference = 63F804341AB8AAA300E4DEE1 /* OMGHTTPURLRQ.framework */;
 			productType = "com.apple.product-type.framework";
@@ -308,7 +308,7 @@
 			projectRoot = "";
 			targets = (
 				63EDFE711A7FFD0E0030F974 /* OMGiOS */,
-				63F804261AB8AAA300E4DEE1 /* OMGOSX */,
+				63F804261AB8AAA300E4DEE1 /* OMGmacOS */,
 				63EDFE7C1A7FFD0E0030F974 /* OMGTest */,
 				43EDF3C31BCC3C0900159436 /* OMGwatchOS */,
 				E18CAC711C56CABC0043C367 /* OMGtvOS */,
@@ -408,7 +408,7 @@
 /* Begin PBXTargetDependency section */
 		63F804371AB8AC6700E4DEE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63F804261AB8AAA300E4DEE1 /* OMGOSX */;
+			target = 63F804261AB8AAA300E4DEE1 /* OMGmacOS */;
 			targetProxy = 63F804361AB8AC6700E4DEE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -644,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63F804311AB8AAA300E4DEE1 /* Build configuration list for PBXNativeTarget "OMGOSX" */ = {
+		63F804311AB8AAA300E4DEE1 /* Build configuration list for PBXNativeTarget "OMGmacOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63F804321AB8AAA300E4DEE1 /* Debug */,
