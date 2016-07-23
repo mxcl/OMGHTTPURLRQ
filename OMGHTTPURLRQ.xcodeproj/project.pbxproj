@@ -526,7 +526,8 @@
 		63EDFE871A7FFD0E0030F974 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,7 +537,8 @@
 		63EDFE881A7FFD0E0030F974 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mxcl.$(PRODUCT_NAME:rfc1034identifier)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
