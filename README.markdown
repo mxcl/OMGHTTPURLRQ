@@ -1,4 +1,4 @@
-# OMGHTTPURLRQ
+# OMGHTTPURLRQ [![Build Status](https://travis-ci.org/mxcl/OMGHTTPURLRQ.svg?branch=master)](https://travis-ci.org/mxcl/OMGHTTPURLRQ)
 
 Vital extensions to `NSURLRequest` that Apple left out for some reason.
 
@@ -19,8 +19,6 @@ NSMutableURLRequest *rq = [OMGHTTPURLRQ DELETE:@"http://api.com":@{@"key": @"val
 ```
 
 You can then pass these to an `NSURLConnection` or `NSURLSession`.
-
-[![Build Status](https://travis-ci.org/mxcl/OMGHTTPURLRQ.svg?branch=master)](https://travis-ci.org/mxcl/OMGHTTPURLRQ)
 
 ## `multipart/form-data`
 
