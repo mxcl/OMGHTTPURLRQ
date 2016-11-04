@@ -31,6 +31,11 @@ static inline NSMutableURLRequest *OMGMutableURLRequest() {
 }
 
 - (void)add:(NSData *)payload :(NSString *)name :(NSString *)filename :(NSString *)contentType {
+	if (body.length) {
+		// if we already added something then we need an additional newline
+        [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+
     id ln1 = [NSString stringWithFormat:@"--%@\r\n", boundary];
     id ln2 = ({
         id s = [NSMutableString stringWithString:@"Content-Disposition: form-data; "];
