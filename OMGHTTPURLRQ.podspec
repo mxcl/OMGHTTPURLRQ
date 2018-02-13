@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
   s.name = "OMGHTTPURLRQ"
 
   `xcodebuild -project #{s.name}.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
-  abort if $1.nil?
+  abort("No version detected") if $1.nil?
   s.version = $1
   
   s.homepage = "https://github.com/mxcl/#{s.name}"
   s.source = { :git => "https://github.com/mxcl/#{s.name}.git", :tag => s.version }
-  s.license = { :type => 'MIT', :text => 'https://github.com/mxcl/OMGHTTPURLRQ/blob/master/README.markdown' }
+  s.license = { type: 'MIT' }
   s.summary = 'Vital extensions to NSURLRequest that Apple left out for some reason (including creating multipart/form-data POSTs)'
 
   s.social_media_url = 'https://twitter.com/mxcl'
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.ios.deployment_target = '5.0'
-  s.osx.deployment_target = '10.7'
+  s.osx.deployment_target = '10.9'
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
   
