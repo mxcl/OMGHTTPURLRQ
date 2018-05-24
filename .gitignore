@@ -1,2 +1,4 @@
 /Carthage
 /Cartfile.resolved
+xcuserdata
+.DS_Store
