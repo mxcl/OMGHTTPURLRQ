@@ -23,17 +23,17 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'RQ'
 
   s.subspec 'RQ' do |ss|
-    ss.source_files = 'Sources/OMGHTTPURLRQ.{h,m}'
+    ss.source_files = 'Sources/RQ/OMGHTTPURLRQ.{h,m}'
     ss.dependency 'OMGHTTPURLRQ/UserAgent'
     ss.dependency 'OMGHTTPURLRQ/FormURLEncode'
   end
 
   s.subspec 'UserAgent' do |ss|
-    ss.source_files = 'Sources/OMGUserAgent.{h,m}'
+    ss.source_files = 'Sources/UserAgent/OMGUserAgent.{h,m}'
   end
 
   s.subspec 'FormURLEncode' do |ss|
-    ss.source_files = 'Sources/OMGFormURLEncode.{h,m}'
+    ss.source_files = 'Sources/FormURLEncode/OMGFormURLEncode.{h,m}'
   end
 
 end

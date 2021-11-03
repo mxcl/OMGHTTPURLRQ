@@ -18,15 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
-		51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/OMGUserAgent.h; sourceTree = "<group>"; };
+		51D4A3D61BAC562700BC6AE2 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/FormURLEncode/OMGFormURLEncode.h; sourceTree = "<group>"; };
+		51D4A3D81BAC562700BC6AE2 /* OMGUserAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/UserAgent/OMGUserAgent.h; sourceTree = "<group>"; };
 		635FC0261AB8AE4600E3CFFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/OMGFormURLEncode.h; sourceTree = "<group>"; };
-		6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGFormURLEncode.m; path = Sources/OMGFormURLEncode.m; sourceTree = "<group>"; };
-		6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGHTTPURLRQ.h; path = Sources/OMGHTTPURLRQ.h; sourceTree = "<group>"; };
-		6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGHTTPURLRQ.m; path = Sources/OMGHTTPURLRQ.m; sourceTree = "<group>"; };
-		6364E0291A7FFDED00F83CA1 /* OMGUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/OMGUserAgent.h; sourceTree = "<group>"; };
-		6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGUserAgent.m; path = Sources/OMGUserAgent.m; sourceTree = "<group>"; };
+		6364E0251A7FFDED00F83CA1 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGFormURLEncode.h; path = Sources/FormURLEncode/OMGFormURLEncode.h; sourceTree = "<group>"; };
+		6364E0261A7FFDED00F83CA1 /* OMGFormURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGFormURLEncode.m; path = Sources/FormURLEncode/OMGFormURLEncode.m; sourceTree = "<group>"; };
+		6364E0271A7FFDED00F83CA1 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGHTTPURLRQ.h; path = Sources/RQ/OMGHTTPURLRQ.h; sourceTree = "<group>"; };
+		6364E0281A7FFDED00F83CA1 /* OMGHTTPURLRQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGHTTPURLRQ.m; path = Sources/RQ/OMGHTTPURLRQ.m; sourceTree = "<group>"; };
+		6364E0291A7FFDED00F83CA1 /* OMGUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/UserAgent/OMGUserAgent.h; sourceTree = "<group>"; };
+		6364E02A1A7FFDED00F83CA1 /* OMGUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGUserAgent.m; path = Sources/UserAgent/OMGUserAgent.m; sourceTree = "<group>"; };
 		636A05041A7FFFE600EA66E1 /* OMGFormURLEncodeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMGFormURLEncodeTestCase.m; path = Tests/OMGFormURLEncodeTestCase.m; sourceTree = "<group>"; };
 		63EDFE721A7FFD0E0030F974 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGHTTPURLRQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EDFE7D1A7FFD0E0030F974 /* OMGTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMGTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,7 +237,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.2.4;
+				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -295,7 +295,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3.2.4;
+				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
