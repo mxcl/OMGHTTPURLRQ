@@ -1,4 +1,4 @@
-# OMGHTTPURLRQ [![Build Status](https://travis-ci.org/mxcl/OMGHTTPURLRQ.svg?branch=master)](https://travis-ci.org/mxcl/OMGHTTPURLRQ)
+# OMGHTTPURLRQ ![Build Status](https://github.com/mxcl/OMGHTTPURLRQ/actions/workflows/CI.yml/badge.svg)
 
 [![Join the chat at https://gitter.im/mxcl/OMGHTTPURLRQ](https://badges.gitter.im/mxcl/OMGHTTPURLRQ.svg)](https://gitter.im/mxcl/OMGHTTPURLRQ?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

@@ -2,3 +2,8 @@
 /Cartfile.resolved
 xcuserdata
 .DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
